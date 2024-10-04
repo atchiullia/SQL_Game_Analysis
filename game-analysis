@@ -1,0 +1,9 @@
+CREATE TEMPORARY TABLE game_analysis AS 
+SELECT *
+FROM games
+
+SELECT Title, Original_Price, Release_Date, All_Reviews_Summary, All_Reviews_Number
+FROM game_analysis
+WHERE All_Reviews_Summary = 'Overwhelmingly Positive' AND Discounted_Price = 'Free'
+GROUP BY All_Reviews_Number 
+
